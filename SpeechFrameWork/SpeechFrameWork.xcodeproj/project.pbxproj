@@ -15,6 +15,9 @@
 		9B0B7FF41E9A74BF00B11D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0B7FF21E9A74BF00B11D88 /* LaunchScreen.storyboard */; };
 		9B0B7FFF1E9A74BF00B11D88 /* SpeechFrameWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B7FFE1E9A74BF00B11D88 /* SpeechFrameWorkTests.m */; };
 		9B0B800A1E9A74BF00B11D88 /* SpeechFrameWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B80091E9A74BF00B11D88 /* SpeechFrameWorkUITests.m */; };
+		9B3F75681E9C7EA800C906EB /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F75671E9C7EA800C906EB /* HttpTool.m */; };
+		9B7DBE071E9BBC5D005B94DB /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7DBE061E9BBC5D005B94DB /* Speech.framework */; };
+		CE0F45235F84D811F75C6643 /* libPods-SpeechFrameWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D7E451A199AAD28C6A9C9 /* libPods-SpeechFrameWork.a */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -35,6 +38,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		48F301F161B8BC751DF83DE8 /* Pods-SpeechFrameWork.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechFrameWork.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechFrameWork/Pods-SpeechFrameWork.debug.xcconfig"; sourceTree = "<group>"; };
+		529D7E451A199AAD28C6A9C9 /* libPods-SpeechFrameWork.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = "libPods-SpeechFrameWork.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		8AA9ABFDDBBBC1E99D6D12F0 /* Pods-SpeechFrameWork.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SpeechFrameWork.release.xcconfig"; path = "Pods/Target Support Files/Pods-SpeechFrameWork/Pods-SpeechFrameWork.release.xcconfig"; sourceTree = "<group>"; };
 		9B0B7FE11E9A74BF00B11D88 /* SpeechFrameWork.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SpeechFrameWork.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0B7FE51E9A74BF00B11D88 /* main.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		9B0B7FE71E9A74BF00B11D88 /* AppDelegate.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = AppDelegate.h; sourceTree = "<group>"; };
@@ -51,6 +57,9 @@
 		9B0B80051E9A74BF00B11D88 /* SpeechFrameWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechFrameWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0B80091E9A74BF00B11D88 /* SpeechFrameWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechFrameWorkUITests.m; sourceTree = "<group>"; };
 		9B0B800B1E9A74BF00B11D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B3F75661E9C7EA800C906EB /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
+		9B3F75671E9C7EA800C906EB /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
+		9B7DBE061E9BBC5D005B94DB /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -58,6 +67,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9B7DBE071E9BBC5D005B94DB /* Speech.framework in Frameworks */,
+				CE0F45235F84D811F75C6643 /* libPods-SpeechFrameWork.a in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -78,6 +89,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		0AE605A945EEDA38BDD86E97 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				9B7DBE061E9BBC5D005B94DB /* Speech.framework */,
+				529D7E451A199AAD28C6A9C9 /* libPods-SpeechFrameWork.a */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		9B0B7FD81E9A74BF00B11D88 = {
 			isa = PBXGroup;
 			children = (
@@ -85,6 +105,8 @@
 				9B0B7FFD1E9A74BF00B11D88 /* SpeechFrameWorkTests */,
 				9B0B80081E9A74BF00B11D88 /* SpeechFrameWorkUITests */,
 				9B0B7FE21E9A74BF00B11D88 /* Products */,
+				C86CA689BFEAA755F16891AD /* Pods */,
+				0AE605A945EEDA38BDD86E97 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -105,6 +127,8 @@
 				9B0B7FE81E9A74BF00B11D88 /* AppDelegate.m */,
 				9B0B7FEA1E9A74BF00B11D88 /* ViewController.h */,
 				9B0B7FEB1E9A74BF00B11D88 /* ViewController.m */,
+				9B3F75661E9C7EA800C906EB /* HttpTool.h */,
+				9B3F75671E9C7EA800C906EB /* HttpTool.m */,
 				9B0B7FED1E9A74BF00B11D88 /* Main.storyboard */,
 				9B0B7FF01E9A74BF00B11D88 /* Assets.xcassets */,
 				9B0B7FF21E9A74BF00B11D88 /* LaunchScreen.storyboard */,
@@ -140,6 +164,15 @@
 			path = SpeechFrameWorkUITests;
 			sourceTree = "<group>";
 		};
+		C86CA689BFEAA755F16891AD /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				48F301F161B8BC751DF83DE8 /* Pods-SpeechFrameWork.debug.xcconfig */,
+				8AA9ABFDDBBBC1E99D6D12F0 /* Pods-SpeechFrameWork.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -147,9 +180,12 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 9B0B800E1E9A74BF00B11D88 /* Build configuration list for PBXNativeTarget "SpeechFrameWork" */;
 			buildPhases = (
+				CA6EFF9FA76F2D82B94BE5A7 /* [CP] Check Pods Manifest.lock */,
 				9B0B7FDD1E9A74BF00B11D88 /* Sources */,
 				9B0B7FDE1E9A74BF00B11D88 /* Frameworks */,
 				9B0B7FDF1E9A74BF00B11D88 /* Resources */,
+				2A35E6F24EF53C1EA138A280 /* [CP] Embed Pods Frameworks */,
+				8BE8FDC58379E813C26907A9 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -207,6 +243,7 @@
 				TargetAttributes = {
 					9B0B7FE01E9A74BF00B11D88 = {
 						CreatedOnToolsVersion = 8.3;
+						DevelopmentTeam = FY3T448KZB;
 						ProvisioningStyle = Automatic;
 					};
 					9B0B7FF91E9A74BF00B11D88 = {
@@ -268,6 +305,54 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
+/* Begin PBXShellScriptBuildPhase section */
+		2A35E6F24EF53C1EA138A280 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeechFrameWork/Pods-SpeechFrameWork-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8BE8FDC58379E813C26907A9 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-SpeechFrameWork/Pods-SpeechFrameWork-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		CA6EFF9FA76F2D82B94BE5A7 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
 /* Begin PBXSourcesBuildPhase section */
 		9B0B7FDD1E9A74BF00B11D88 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -276,6 +361,7 @@
 				9B0B7FEC1E9A74BF00B11D88 /* ViewController.m in Sources */,
 				9B0B7FE91E9A74BF00B11D88 /* AppDelegate.m in Sources */,
 				9B0B7FE61E9A74BF00B11D88 /* main.m in Sources */,
+				9B3F75681E9C7EA800C906EB /* HttpTool.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -371,7 +457,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = YES;
 				ONLY_ACTIVE_ARCH = YES;
 				SDKROOT = iphoneos;
@@ -414,7 +500,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 10.3;
+				IPHONEOS_DEPLOYMENT_TARGET = 10.2;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
 				TARGETED_DEVICE_FAMILY = "1,2";
@@ -424,8 +510,10 @@
 		};
 		9B0B800F1E9A74BF00B11D88 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 48F301F161B8BC751DF83DE8 /* Pods-SpeechFrameWork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FY3T448KZB;
 				INFOPLIST_FILE = SpeechFrameWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = begoss.SpeechFrameWork;
@@ -435,8 +523,10 @@
 		};
 		9B0B80101E9A74BF00B11D88 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 8AA9ABFDDBBBC1E99D6D12F0 /* Pods-SpeechFrameWork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = FY3T448KZB;
 				INFOPLIST_FILE = SpeechFrameWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = begoss.SpeechFrameWork;
@@ -509,6 +599,7 @@
 				9B0B80101E9A74BF00B11D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B0B80111E9A74BF00B11D88 /* Build configuration list for PBXNativeTarget "SpeechFrameWorkTests" */ = {
 			isa = XCConfigurationList;
@@ -517,6 +608,7 @@
 				9B0B80131E9A74BF00B11D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		9B0B80141E9A74BF00B11D88 /* Build configuration list for PBXNativeTarget "SpeechFrameWorkUITests" */ = {
 			isa = XCConfigurationList;
@@ -525,6 +617,7 @@
 				9B0B80161E9A74BF00B11D88 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
