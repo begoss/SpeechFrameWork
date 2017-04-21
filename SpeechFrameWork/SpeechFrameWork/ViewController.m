@@ -9,23 +9,7 @@
 #import "ViewController.h"
 #import <Speech/Speech.h>
 #import "HttpTool.h"
-
-//Target word
-#define TargetString1 @"家"
-#define TargetString2 @"猪"
-#define TargetString3 @"丢人"
-#define TargetString4 @"笨"
-#define TargetString5 @"事多"
-#define TargetString6 @"你这样"
-#define TargetString7_1 @"换作我"
-#define TargetString7_2 @"换做我"
-#define TargetString8 @"好"
-#define TargetString9 @"棒"
-#define TargetString10 @"加油"
-
-//Screen
-#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
-#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
+#import "SettingsViewController.h"
 
 @interface ViewController () <SFSpeechRecognitionTaskDelegate, SFSpeechRecognizerDelegate>
 
@@ -34,6 +18,7 @@
 @property (nonatomic, strong) SFSpeechAudioBufferRecognitionRequest *recognitionRequest;
 @property (nonatomic, strong) UILabel                 *recognizerLabel;
 @property (nonatomic, strong) UIButton                *button1;
+@property (nonatomic, strong) UIButton                *editHost;
 @property (nonatomic, strong) AVAudioEngine           *audioEngine;
 @property (nonatomic, strong) AVAudioInputNode        *inputNode;
 
@@ -51,6 +36,11 @@
     [super viewDidLoad];
     // Do any additional setup after loading the view.
     self.view.backgroundColor = [UIColor whiteColor];
+    
+    if ([[NSUserDefaults standardUserDefaults] objectForKey:KEY_API_HOST]==nil) {
+        [[NSUserDefaults standardUserDefaults] setObject:@"speech.andybear.top" forKey:KEY_API_HOST];
+        [[NSUserDefaults standardUserDefaults] setObject:@"80" forKey:KEY_API_PORT];
+    }
     
     [SFSpeechRecognizer requestAuthorization:^(SFSpeechRecognizerAuthorizationStatus status) {
         switch (status) {
@@ -72,6 +62,7 @@
     }];
     [self.view addSubview:self.recognizerLabel];
     [self.view addSubview:self.button1];
+//    [self.view addSubview:self.editHost];
     
     //1.创建SFSpeechRecognizer识别实例
     self.speechRecognizer = [[SFSpeechRecognizer alloc] initWithLocale:[[NSLocale alloc] initWithLocaleIdentifier:@"zh_CN"]];
@@ -122,7 +113,7 @@
         key = @"10";
     }
     if (![key isEqualToString:@"-1"]) {
-        [HttpTool getWithPath:@"http://192.168.155.6:9090/api/change_status" params:[NSDictionary dictionaryWithObjectsAndKeys:key, @"status", nil] success:^(id JSON) {
+        [HttpTool getWithPath:[NSString stringWithFormat:@"http://%@:%@/api/change_status",[[NSUserDefaults standardUserDefaults] objectForKey:KEY_API_HOST],[[NSUserDefaults standardUserDefaults] objectForKey:KEY_API_PORT]] params:[NSDictionary dictionaryWithObjectsAndKeys:key, @"status", nil] success:^(id JSON) {
             if ([[JSON objectForKey:@"status"] isEqualToString:@"ok"]) {
                 NSLog(@"ok");
             }else {
@@ -152,6 +143,11 @@
     }];
     [self.audioEngine prepare];
     [self.audioEngine startAndReturnError:nil];
+}
+
+- (void)setHost {
+    SettingsViewController *vc = [[SettingsViewController alloc] init];
+    [self.navigationController pushViewController:vc animated:YES];
 }
 
 - (SFSpeechRecognitionTask *)recognitionTaskWithRequest0:(SFSpeechRecognitionRequest *)request{
@@ -250,6 +246,15 @@
         [_button1 addTarget:self action:@selector(buttonEnd:) forControlEvents:UIControlEventTouchUpOutside];
     }
     return _button1;
+}
+
+- (UIButton *)editHost {
+    if (!_editHost) {
+        _editHost = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-60, SCREEN_HEIGHT*2/3+60, 120, 50)];
+        _editHost.backgroundColor = [UIColor whiteColor];
+        [_editHost addTarget:self action:@selector(setHost) forControlEvents:UIControlEventTouchUpInside];
+    }
+    return _editHost;
 }
 
 @end

@@ -15,6 +15,7 @@
 		9B0B7FF41E9A74BF00B11D88 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9B0B7FF21E9A74BF00B11D88 /* LaunchScreen.storyboard */; };
 		9B0B7FFF1E9A74BF00B11D88 /* SpeechFrameWorkTests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B7FFE1E9A74BF00B11D88 /* SpeechFrameWorkTests.m */; };
 		9B0B800A1E9A74BF00B11D88 /* SpeechFrameWorkUITests.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B0B80091E9A74BF00B11D88 /* SpeechFrameWorkUITests.m */; };
+		9B2884141EA9DA73000637C6 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B2884131EA9DA73000637C6 /* SettingsViewController.m */; };
 		9B3F75681E9C7EA800C906EB /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F75671E9C7EA800C906EB /* HttpTool.m */; };
 		9B7DBE071E9BBC5D005B94DB /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7DBE061E9BBC5D005B94DB /* Speech.framework */; };
 		CE0F45235F84D811F75C6643 /* libPods-SpeechFrameWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D7E451A199AAD28C6A9C9 /* libPods-SpeechFrameWork.a */; };
@@ -57,6 +58,10 @@
 		9B0B80051E9A74BF00B11D88 /* SpeechFrameWorkUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SpeechFrameWorkUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		9B0B80091E9A74BF00B11D88 /* SpeechFrameWorkUITests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SpeechFrameWorkUITests.m; sourceTree = "<group>"; };
 		9B0B800B1E9A74BF00B11D88 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		9B2884101EA9DA73000637C6 /* CommonMacro.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CommonMacro.h; sourceTree = "<group>"; };
+		9B2884111EA9DA73000637C6 /* PrefixHeader.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		9B2884121EA9DA73000637C6 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		9B2884131EA9DA73000637C6 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 		9B3F75661E9C7EA800C906EB /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		9B3F75671E9C7EA800C906EB /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		9B7DBE061E9BBC5D005B94DB /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
@@ -127,12 +132,16 @@
 				9B0B7FE81E9A74BF00B11D88 /* AppDelegate.m */,
 				9B0B7FEA1E9A74BF00B11D88 /* ViewController.h */,
 				9B0B7FEB1E9A74BF00B11D88 /* ViewController.m */,
+				9B2884121EA9DA73000637C6 /* SettingsViewController.h */,
+				9B2884131EA9DA73000637C6 /* SettingsViewController.m */,
 				9B3F75661E9C7EA800C906EB /* HttpTool.h */,
 				9B3F75671E9C7EA800C906EB /* HttpTool.m */,
 				9B0B7FED1E9A74BF00B11D88 /* Main.storyboard */,
 				9B0B7FF01E9A74BF00B11D88 /* Assets.xcassets */,
 				9B0B7FF21E9A74BF00B11D88 /* LaunchScreen.storyboard */,
 				9B0B7FF51E9A74BF00B11D88 /* Info.plist */,
+				9B2884101EA9DA73000637C6 /* CommonMacro.h */,
+				9B2884111EA9DA73000637C6 /* PrefixHeader.pch */,
 				9B0B7FE41E9A74BF00B11D88 /* Supporting Files */,
 			);
 			path = SpeechFrameWork;
@@ -360,6 +369,7 @@
 			files = (
 				9B0B7FEC1E9A74BF00B11D88 /* ViewController.m in Sources */,
 				9B0B7FE91E9A74BF00B11D88 /* AppDelegate.m in Sources */,
+				9B2884141EA9DA73000637C6 /* SettingsViewController.m in Sources */,
 				9B0B7FE61E9A74BF00B11D88 /* main.m in Sources */,
 				9B3F75681E9C7EA800C906EB /* HttpTool.m in Sources */,
 			);
@@ -514,6 +524,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FY3T448KZB;
+				GCC_PREFIX_HEADER = SpeechFrameWork/PrefixHeader.pch;
 				INFOPLIST_FILE = SpeechFrameWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = begoss.SpeechFrameWork;
@@ -527,6 +538,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				DEVELOPMENT_TEAM = FY3T448KZB;
+				GCC_PREFIX_HEADER = SpeechFrameWork/PrefixHeader.pch;
 				INFOPLIST_FILE = SpeechFrameWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = begoss.SpeechFrameWork;
