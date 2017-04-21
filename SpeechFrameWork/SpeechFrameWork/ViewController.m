@@ -10,9 +10,22 @@
 #import <Speech/Speech.h>
 #import "HttpTool.h"
 
-#define TargetString1 @"笨"
-#define TargetString2 @"傻"
-#define TargetString3 @"猪"
+//Target word
+#define TargetString1 @"家"
+#define TargetString2 @"猪"
+#define TargetString3 @"丢人"
+#define TargetString4 @"笨"
+#define TargetString5 @"事多"
+#define TargetString6 @"你这样"
+#define TargetString7_1 @"换作我"
+#define TargetString7_2 @"换做我"
+#define TargetString8 @"好"
+#define TargetString9 @"棒"
+#define TargetString10 @"加油"
+
+//Screen
+#define SCREEN_WIDTH [UIScreen mainScreen].bounds.size.width
+#define SCREEN_HEIGHT [UIScreen mainScreen].bounds.size.height
 
 @interface ViewController () <SFSpeechRecognitionTaskDelegate, SFSpeechRecognizerDelegate>
 
@@ -86,23 +99,37 @@
 }
 
 - (void)recognizeString:(NSString *)str {
+    NSString *key = @"-1";
     if ([str rangeOfString:TargetString1].location != NSNotFound) {
-        [HttpTool getWithPath:@"http://121.42.233.141:7878/api/change_status" params:[NSDictionary dictionaryWithObjectsAndKeys:@"1", @"status", nil] success:^(id JSON) {
-            
-        } failure:^(NSError *error) {
-            
-        }];
+        key = @"1";
     }else if ([str rangeOfString:TargetString2].location != NSNotFound) {
-        [HttpTool getWithPath:@"http://121.42.233.141:7878/api/change_status" params:[NSDictionary dictionaryWithObjectsAndKeys:@"2", @"status", nil] success:^(id JSON) {
-            
-        } failure:^(NSError *error) {
-            
-        }];
+        key = @"2";
     }else if ([str rangeOfString:TargetString3].location != NSNotFound) {
-        [HttpTool getWithPath:@"http://121.42.233.141:7878/api/change_status" params:[NSDictionary dictionaryWithObjectsAndKeys:@"3", @"status", nil] success:^(id JSON) {
-            
+        key = @"3";
+    }else if ([str rangeOfString:TargetString4].location != NSNotFound) {
+        key = @"4";
+    }else if ([str rangeOfString:TargetString5].location != NSNotFound) {
+        key = @"5";
+    }else if ([str rangeOfString:TargetString6].location != NSNotFound) {
+        key = @"6";
+    }else if (([str rangeOfString:TargetString7_1].location != NSNotFound)||([str rangeOfString:TargetString7_2].location != NSNotFound)) {
+        key = @"7";
+    }else if ([str rangeOfString:TargetString8].location != NSNotFound) {
+        key = @"8";
+    }else if ([str rangeOfString:TargetString9].location != NSNotFound) {
+        key = @"9";
+    }else if ([str rangeOfString:TargetString10].location != NSNotFound) {
+        key = @"10";
+    }
+    if (![key isEqualToString:@"-1"]) {
+        [HttpTool getWithPath:@"http://192.168.155.6:9090/api/change_status" params:[NSDictionary dictionaryWithObjectsAndKeys:key, @"status", nil] success:^(id JSON) {
+            if ([[JSON objectForKey:@"status"] isEqualToString:@"ok"]) {
+                NSLog(@"ok");
+            }else {
+                NSLog(@"%@",[JSON objectForKey:@"status"]);
+            }
         } failure:^(NSError *error) {
-            
+            NSLog(@"failure");
         }];
     }
 }
@@ -200,8 +227,9 @@
 
 - (UILabel *)recognizerLabel {
     if (!_recognizerLabel) {
-        _recognizerLabel = [[UILabel alloc] initWithFrame:CGRectMake(50, 100, 270, 25)];
+        _recognizerLabel = [[UILabel alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-150, SCREEN_HEIGHT/3, 300, 50)];
         _recognizerLabel.numberOfLines = 0;
+        _recognizerLabel.textAlignment = UITextAlignmentCenter;
         _recognizerLabel.text = @"按住按钮说话";
         _recognizerLabel.font = [UIFont preferredFontForTextStyle:UIFontTextStyleBody];
         _recognizerLabel.adjustsFontForContentSizeCategory = YES;
@@ -212,8 +240,9 @@
 
 - (UIButton *)button1 {
     if (!_button1) {
-        _button1 = [[UIButton alloc] initWithFrame:CGRectMake(50, 150, 80, 40)];
+        _button1 = [[UIButton alloc] initWithFrame:CGRectMake(SCREEN_WIDTH/2-60, SCREEN_HEIGHT*2/3, 120, 50)];
         _button1.tag = 1;
+        _button1.layer.cornerRadius = 5.0f;
         _button1.backgroundColor = [UIColor grayColor];
         [_button1 setTitle:@"按下说话" forState:UIControlStateNormal];
         [_button1 addTarget:self action:@selector(buttonBegin:) forControlEvents:UIControlEventTouchDown];
