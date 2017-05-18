@@ -18,6 +18,7 @@
 		9B3F75681E9C7EA800C906EB /* HttpTool.m in Sources */ = {isa = PBXBuildFile; fileRef = 9B3F75671E9C7EA800C906EB /* HttpTool.m */; };
 		9B7DBE071E9BBC5D005B94DB /* Speech.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9B7DBE061E9BBC5D005B94DB /* Speech.framework */; };
 		CE0F45235F84D811F75C6643 /* libPods-SpeechFrameWork.a in Frameworks */ = {isa = PBXBuildFile; fileRef = 529D7E451A199AAD28C6A9C9 /* libPods-SpeechFrameWork.a */; };
+		F4350B851EA9C627007ED6C8 /* SettingsViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = F4350B841EA9C627007ED6C8 /* SettingsViewController.m */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -60,6 +61,10 @@
 		9B3F75661E9C7EA800C906EB /* HttpTool.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = HttpTool.h; sourceTree = "<group>"; };
 		9B3F75671E9C7EA800C906EB /* HttpTool.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = HttpTool.m; sourceTree = "<group>"; };
 		9B7DBE061E9BBC5D005B94DB /* Speech.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Speech.framework; path = System/Library/Frameworks/Speech.framework; sourceTree = SDKROOT; };
+		F4350B811EA9B4DB007ED6C8 /* PrefixHeader.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = PrefixHeader.pch; sourceTree = "<group>"; };
+		F4350B821EA9B542007ED6C8 /* CommonMacro.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CommonMacro.h; sourceTree = "<group>"; };
+		F4350B831EA9C627007ED6C8 /* SettingsViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = SettingsViewController.h; sourceTree = "<group>"; };
+		F4350B841EA9C627007ED6C8 /* SettingsViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = SettingsViewController.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -127,8 +132,12 @@
 				9B0B7FE81E9A74BF00B11D88 /* AppDelegate.m */,
 				9B0B7FEA1E9A74BF00B11D88 /* ViewController.h */,
 				9B0B7FEB1E9A74BF00B11D88 /* ViewController.m */,
+				F4350B831EA9C627007ED6C8 /* SettingsViewController.h */,
+				F4350B841EA9C627007ED6C8 /* SettingsViewController.m */,
 				9B3F75661E9C7EA800C906EB /* HttpTool.h */,
 				9B3F75671E9C7EA800C906EB /* HttpTool.m */,
+				F4350B811EA9B4DB007ED6C8 /* PrefixHeader.pch */,
+				F4350B821EA9B542007ED6C8 /* CommonMacro.h */,
 				9B0B7FED1E9A74BF00B11D88 /* Main.storyboard */,
 				9B0B7FF01E9A74BF00B11D88 /* Assets.xcassets */,
 				9B0B7FF21E9A74BF00B11D88 /* LaunchScreen.storyboard */,
@@ -243,8 +252,8 @@
 				TargetAttributes = {
 					9B0B7FE01E9A74BF00B11D88 = {
 						CreatedOnToolsVersion = 8.3;
-						DevelopmentTeam = FY3T448KZB;
-						ProvisioningStyle = Automatic;
+						DevelopmentTeam = K5H34CZR68;
+						ProvisioningStyle = Manual;
 					};
 					9B0B7FF91E9A74BF00B11D88 = {
 						CreatedOnToolsVersion = 8.3;
@@ -360,6 +369,7 @@
 			files = (
 				9B0B7FEC1E9A74BF00B11D88 /* ViewController.m in Sources */,
 				9B0B7FE91E9A74BF00B11D88 /* AppDelegate.m in Sources */,
+				F4350B851EA9C627007ED6C8 /* SettingsViewController.m in Sources */,
 				9B0B7FE61E9A74BF00B11D88 /* main.m in Sources */,
 				9B3F75681E9C7EA800C906EB /* HttpTool.m in Sources */,
 			);
@@ -513,11 +523,15 @@
 			baseConfigurationReference = 48F301F161B8BC751DF83DE8 /* Pods-SpeechFrameWork.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY3T448KZB;
+				DEVELOPMENT_TEAM = K5H34CZR68;
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = SpeechFrameWork/PrefixHeader.pch;
 				INFOPLIST_FILE = SpeechFrameWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = begoss.SpeechFrameWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liurundong.SpeechFrameWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "12e41b9b-234e-4d96-8b65-0d1dd9aade4e";
+				PROVISIONING_PROFILE_SPECIFIER = SpeechFramework;
 			};
 			name = Debug;
 		};
@@ -526,11 +540,14 @@
 			baseConfigurationReference = 8AA9ABFDDBBBC1E99D6D12F0 /* Pods-SpeechFrameWork.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = FY3T448KZB;
+				DEVELOPMENT_TEAM = "";
+				GCC_PRECOMPILE_PREFIX_HEADER = NO;
+				GCC_PREFIX_HEADER = SpeechFrameWork/PrefixHeader.pch;
 				INFOPLIST_FILE = SpeechFrameWork/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = begoss.SpeechFrameWork;
+				PRODUCT_BUNDLE_IDENTIFIER = com.liurundong.SpeechFrameWork;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 			};
 			name = Release;
 		};
